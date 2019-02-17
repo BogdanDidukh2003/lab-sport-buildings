@@ -1,2 +1,2 @@
 # lab-sport-buildings
-Lab 2: implementation of Sport Buildings
+Lab 3: implementation of Sport Buildings
