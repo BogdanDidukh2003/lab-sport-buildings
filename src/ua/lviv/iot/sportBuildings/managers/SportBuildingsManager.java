@@ -28,21 +28,17 @@ public class SportBuildingsManager implements ISportBuildingsManager, Serializab
 
     @Override
     public void sortBySportKind(List<SportBuilding> sportBuildings) {
-        Comparator<SportBuilding> sportKindComparator = (obj1, obj2) ->
-                obj1.getSportKind().compareTo(obj2.getSportKind());
-        sportBuildings.sort(sportKindComparator);
+        sportBuildings.sort(Comparator.comparing(SportBuilding::getSportKind));
     }
 
     @Override
     public void sortBySportSeason(List<SportBuilding> sportBuildings) {
-        Comparator<SportBuilding> sportSeasonComparator = (obj1, obj2) ->
-                obj1.getSportSeason().compareTo(obj2.getSportSeason());
-        sportBuildings.sort(sportSeasonComparator);
+        sportBuildings.sort(Comparator.comparing(SportBuilding::getSportSeason));
     }
 
     @Override
     public void printSportBuildingsInfo(List<SportBuilding> sportBuildings) {
-        sportBuildings.forEach(sportBuilding -> System.out.println(sportBuilding.toString()));
+        sportBuildings.forEach(System.out::println);
     }
 
     public List<SportBuilding> getSportBuildings() {
