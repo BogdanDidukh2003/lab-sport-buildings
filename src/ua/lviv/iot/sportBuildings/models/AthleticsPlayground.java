@@ -21,8 +21,8 @@ public class AthleticsPlayground extends SportBuilding {
 
     @Override
     public String toString() {
-        return super.toString()
-                + "AthleticsPlayground{" +
+        return super.toString() +
+                "AthleticsPlayground{" +
                 "trackDistance=" + trackDistance +
                 ", tracksNumber=" + tracksNumber +
                 '}';
