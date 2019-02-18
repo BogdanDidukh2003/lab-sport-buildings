@@ -11,7 +11,8 @@ public class SportBuildingsManager implements ISportBuildingsManager, Serializab
 
     private List<SportBuilding> sportBuildings;
 
-    public SportBuildingsManager() {}
+    public SportBuildingsManager() {
+    }
 
     public SportBuildingsManager(List<SportBuilding> sportBuildings) {
         this.sportBuildings = sportBuildings;
@@ -20,22 +21,22 @@ public class SportBuildingsManager implements ISportBuildingsManager, Serializab
     @Override
     public List<SportBuilding> findByViewersNumber(int min, int max) {
         return sportBuildings.stream()
-                .filter(sportBuilding
-                        -> sportBuilding.getViewersNumber() >= min && sportBuilding.getViewersNumber() <= max)
+                .filter(sportBuilding -> sportBuilding.getViewersNumber() >= min &&
+                        sportBuilding.getViewersNumber() <= max)
                 .collect(Collectors.toList());
     }
 
     @Override
     public void sortBySportKind(List<SportBuilding> sportBuildings) {
-        Comparator<SportBuilding> sportKindComparator = (obj1, obj2)
-                -> obj1.getSportKind().compareTo(obj2.getSportKind());
+        Comparator<SportBuilding> sportKindComparator = (obj1, obj2) ->
+                obj1.getSportKind().compareTo(obj2.getSportKind());
         sportBuildings.sort(sportKindComparator);
     }
 
     @Override
     public void sortBySportSeason(List<SportBuilding> sportBuildings) {
-        Comparator<SportBuilding> sportSeasonComparator = (obj1, obj2)
-                -> obj1.getSportSeason().compareTo(obj2.getSportSeason());
+        Comparator<SportBuilding> sportSeasonComparator = (obj1, obj2) ->
+                obj1.getSportSeason().compareTo(obj2.getSportSeason());
         sportBuildings.sort(sportSeasonComparator);
     }
 

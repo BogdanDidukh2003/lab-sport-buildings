@@ -21,8 +21,8 @@ public class FootballField extends SportBuilding {
 
     @Override
     public String toString() {
-        return super.toString()
-                + "FootballField{" +
+        return super.toString() +
+                "FootballField{" +
                 "fieldWidth=" + fieldWidth +
                 ", fieldLength=" + fieldLength +
                 '}';
