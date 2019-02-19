@@ -18,8 +18,8 @@ public class ChessHall extends SportBuilding {
 
     @Override
     public String toString() {
-        return super.toString()
-                + "ChessHall{" +
+        return super.toString() +
+                "ChessHall{" +
                 "tablesNumber=" + tablesNumber +
                 '}';
     }

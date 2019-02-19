@@ -21,8 +21,8 @@ public class AquaticsHall extends SportBuilding {
 
     @Override
     public String toString() {
-        return super.toString()
-                + "AquaticsHall{" +
+        return super.toString() +
+                "AquaticsHall{" +
                 "poolsNumber=" + poolsNumber +
                 ", averagePoolVolume=" + averagePoolVolume +
                 '}';

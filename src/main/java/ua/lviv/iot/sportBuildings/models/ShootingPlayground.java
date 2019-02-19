@@ -25,8 +25,8 @@ public class ShootingPlayground extends SportBuilding {
 
     @Override
     public String toString() {
-        return super.toString()
-                + "ShootingPlayground{" +
+        return super.toString() +
+                "ShootingPlayground{" +
                 "bowsNumber=" + bowsNumber +
                 ", targetsNumber=" + targetsNumber +
                 ", arrowsNumber=" + arrowsNumber +
