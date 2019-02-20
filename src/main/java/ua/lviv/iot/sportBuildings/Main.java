@@ -1,7 +1,14 @@
 package ua.lviv.iot.sportBuildings;
 
 import ua.lviv.iot.sportBuildings.managers.SportBuildingsManager;
-import ua.lviv.iot.sportBuildings.models.*;
+import ua.lviv.iot.sportBuildings.models.AquaticsHall;
+import ua.lviv.iot.sportBuildings.models.AthleticsPlayground;
+import ua.lviv.iot.sportBuildings.models.ChessHall;
+import ua.lviv.iot.sportBuildings.models.FootballField;
+import ua.lviv.iot.sportBuildings.models.ShootingPlayground;
+import ua.lviv.iot.sportBuildings.models.SportBuilding;
+import ua.lviv.iot.sportBuildings.models.SportKind;
+import ua.lviv.iot.sportBuildings.models.SportSeason;
 
 import java.util.ArrayList;
 import java.util.List;

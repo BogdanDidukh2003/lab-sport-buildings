@@ -2,12 +2,11 @@ package ua.lviv.iot.sportBuildings.managers;
 
 import ua.lviv.iot.sportBuildings.models.SportBuilding;
 
-import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SportBuildingsManager implements ISportBuildingsManager, Serializable {
+public class SportBuildingsManager implements ISportBuildingsManager {
 
     private List<SportBuilding> sportBuildings;
 
