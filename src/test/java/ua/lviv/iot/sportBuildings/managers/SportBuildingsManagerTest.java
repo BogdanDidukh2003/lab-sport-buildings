@@ -3,12 +3,21 @@ package ua.lviv.iot.sportBuildings.managers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ua.lviv.iot.sportBuildings.models.*;
+
+import ua.lviv.iot.sportBuildings.models.AquaticsHall;
+import ua.lviv.iot.sportBuildings.models.AthleticsPlayground;
+import ua.lviv.iot.sportBuildings.models.ChessHall;
+import ua.lviv.iot.sportBuildings.models.FootballField;
+import ua.lviv.iot.sportBuildings.models.ShootingPlayground;
+import ua.lviv.iot.sportBuildings.models.SportBuilding;
+import ua.lviv.iot.sportBuildings.models.SportKind;
+import ua.lviv.iot.sportBuildings.models.SportSeason;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SportBuildingsManagerTest {
 
