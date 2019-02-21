@@ -128,6 +128,7 @@
         <version>3.0.0</version>
         <configuration>
           <configLocation>./src/main/resources/checkstyle/checkstyle.xml</configLocation>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
         </configuration>
       </plugin>
 
@@ -135,12 +136,18 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.11.0</version>
+        <configuration>
+          <includeTests>true</includeTests>
+        </configuration>
       </plugin>
 
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
         <version>3.1.10</version>
+        <configuration>
+          <includeTests>true</includeTests>
+        </configuration>
       </plugin>
 
     </plugins>
