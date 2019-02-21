@@ -19,15 +19,6 @@ public class AthleticsPlayground extends SportBuilding {
         this.tracksNumber = tracksNumber;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "AthleticsPlayground{" +
-                "trackDistance=" + trackDistance +
-                ", tracksNumber=" + tracksNumber +
-                '}';
-    }
-
     public int getTrackDistance() {
         return trackDistance;
     }

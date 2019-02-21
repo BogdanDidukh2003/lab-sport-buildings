@@ -2,7 +2,6 @@ package ua.lviv.iot.sportBuildings.managers;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ua.lviv.iot.sportBuildings.models.*;
 
@@ -58,7 +57,7 @@ class SportBuildingsManagerTest {
         List<SportBuilding> selectedBuildings = manager.findByViewersNumber(minViewersNumber, maxViewersNumber);
         for (SportBuilding selectedBuilding : selectedBuildings) {
             assertTrue(selectedBuilding.getViewersNumber() > minViewersNumber
-                    && selectedBuilding.getViewersNumber() < maxViewersNumber,
+                            && selectedBuilding.getViewersNumber() < maxViewersNumber,
                     "findByViewersNumber() doesn't work properly");
         }
     }
@@ -68,7 +67,7 @@ class SportBuildingsManagerTest {
         manager.sortBySportKind(sportBuildings);
         for (int i = 1; i < sportBuildingsSize; i++) {
             assertTrue(sportBuildings.get(i).getSportKind().ordinal() >=
-                    sportBuildings.get(i - 1).getSportKind().ordinal(),
+                            sportBuildings.get(i - 1).getSportKind().ordinal(),
                     "sortBySportKind() doesn't work properly");
         }
     }
@@ -78,7 +77,7 @@ class SportBuildingsManagerTest {
         manager.sortBySportSeason(sportBuildings);
         for (int i = 1; i < sportBuildingsSize; i++) {
             assertTrue(sportBuildings.get(i).getSportSeason().ordinal() >=
-                    sportBuildings.get(i - 1).getSportSeason().ordinal(),
+                            sportBuildings.get(i - 1).getSportSeason().ordinal(),
                     "sortBySportSeason() doesn't work properly");
         }
     }

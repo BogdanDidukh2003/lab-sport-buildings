@@ -16,14 +16,6 @@ public class ChessHall extends SportBuilding {
         this.tablesNumber = tablesNumber;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "ChessHall{" +
-                "tablesNumber=" + tablesNumber +
-                '}';
-    }
-
     public int getTablesNumber() {
         return tablesNumber;
     }
