@@ -23,16 +23,6 @@ public class ShootingPlayground extends SportBuilding {
         this.arrowsNumber = arrowsNumber;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "ShootingPlayground{" +
-                "bowsNumber=" + bowsNumber +
-                ", targetsNumber=" + targetsNumber +
-                ", arrowsNumber=" + arrowsNumber +
-                '}';
-    }
-
     public int getBowsNumber() {
         return bowsNumber;
     }

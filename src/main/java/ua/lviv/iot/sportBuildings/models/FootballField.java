@@ -19,15 +19,6 @@ public class FootballField extends SportBuilding {
         this.fieldLength = fieldLength;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "FootballField{" +
-                "fieldWidth=" + fieldWidth +
-                ", fieldLength=" + fieldLength +
-                '}';
-    }
-
     public double getFieldWidth() {
         return fieldWidth;
     }

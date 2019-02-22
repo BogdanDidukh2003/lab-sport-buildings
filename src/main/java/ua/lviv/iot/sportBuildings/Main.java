@@ -34,7 +34,7 @@ public class Main {
     /**
      * method to init the ArrayList
      */
-    private static List<SportBuilding> createSportBuildingsList() {
+    static List<SportBuilding> createSportBuildingsList() {
         List<SportBuilding> sportBuildings = new ArrayList<>();
 
         sportBuildings.add(new AquaticsHall("Aqua Hall", "Red st, 117", 1994,

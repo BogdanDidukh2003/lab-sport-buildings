@@ -19,15 +19,6 @@ public class AquaticsHall extends SportBuilding {
         this.averagePoolVolume = averagePoolVolume;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "AquaticsHall{" +
-                "poolsNumber=" + poolsNumber +
-                ", averagePoolVolume=" + averagePoolVolume +
-                '}';
-    }
-
     public int getPoolsNumber() {
         return poolsNumber;
     }
