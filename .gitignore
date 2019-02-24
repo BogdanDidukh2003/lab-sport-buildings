@@ -29,3 +29,6 @@ target/
 # intellij idea
 .idea
 
+# project mess
+csvFile.csv
+

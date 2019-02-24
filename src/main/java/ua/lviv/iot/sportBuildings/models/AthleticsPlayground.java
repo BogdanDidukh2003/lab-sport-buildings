@@ -5,7 +5,8 @@ public class AthleticsPlayground extends SportBuilding {
     private int trackDistance;
     private int tracksNumber;
 
-    public AthleticsPlayground() {}
+    public AthleticsPlayground() {
+    }
 
     public AthleticsPlayground(int trackDistance, int tracksNumber) {
         this.trackDistance = trackDistance;
@@ -17,6 +18,18 @@ public class AthleticsPlayground extends SportBuilding {
         super(name, location, constructionYear, sportSeason, viewersNumber, sportKind);
         this.trackDistance = trackDistance;
         this.tracksNumber = tracksNumber;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + ","
+                + "trackDistance" + ","
+                + "tracksNumber";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ","
+                + this.trackDistance + ","
+                + this.tracksNumber;
     }
 
     public int getTrackDistance() {

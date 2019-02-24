@@ -37,17 +37,17 @@ public class Main {
     static List<SportBuilding> createSportBuildingsList() {
         List<SportBuilding> sportBuildings = new ArrayList<>();
 
-        sportBuildings.add(new AquaticsHall("Aqua Hall", "Red st, 117", 1994,
+        sportBuildings.add(new AquaticsHall("Aqua Hall", "Red st 117", 1994,
                 SportSeason.ALL_SEASONS, 600, SportKind.AQUATICS, 8,
                 20));
-        sportBuildings.add(new AthleticsPlayground("Athletics playground", "Baker st, 88",
+        sportBuildings.add(new AthleticsPlayground("Athletics playground", "Baker st 88",
                 2003, SportSeason.SUMMER, 800, SportKind.ATHLETICS, 3000,
                 10));
-        sportBuildings.add(new ChessHall("Chess Hall", "Silent st, 204", 1990,
+        sportBuildings.add(new ChessHall("Chess Hall", "Silent st 204", 1990,
                 SportSeason.ALL_SEASONS, 90, SportKind.CHESS, 10));
-        sportBuildings.add(new FootballField("Football field", "Liberty st, 39", 1968,
+        sportBuildings.add(new FootballField("Football field", "Liberty st 39", 1968,
                 SportSeason.SUMMER, 1100, SportKind.FOOTBALL, 30, 70));
-        sportBuildings.add(new ShootingPlayground("Winter Archery", "Silver st, 42", 1999,
+        sportBuildings.add(new ShootingPlayground("Winter Archery", "Silver st 42", 1999,
                 SportSeason.WINTER, 500, SportKind.ARCHERY, 30, 15,
                 250));
 

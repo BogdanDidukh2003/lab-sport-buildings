@@ -5,7 +5,8 @@ public class FootballField extends SportBuilding {
     private double fieldWidth;
     private double fieldLength;
 
-    public FootballField() {}
+    public FootballField() {
+    }
 
     public FootballField(double fieldWidth, double fieldLength) {
         this.fieldWidth = fieldWidth;
@@ -17,6 +18,18 @@ public class FootballField extends SportBuilding {
         super(name, location, constructionYear, sportSeason, viewersNumber, sportKind);
         this.fieldWidth = fieldWidth;
         this.fieldLength = fieldLength;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + ","
+                + "fieldWidth" + ","
+                + "fieldLength";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ","
+                + this.fieldWidth + ","
+                + this.fieldLength;
     }
 
     public double getFieldWidth() {

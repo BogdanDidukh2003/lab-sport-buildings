@@ -25,18 +25,18 @@ class SportBuildingsManagerTest {
     private SportBuildingsManager manager;
 
     // init all objects to improve performance
-    private AquaticsHall aquaticsHall = new AquaticsHall("Aqua Hall", "Red st, 117", 1994,
+    private AquaticsHall aquaticsHall = new AquaticsHall("Aqua Hall", "Red st 117", 1994,
             SportSeason.ALL_SEASONS, 600, SportKind.AQUATICS, 8,
             20);
     private AthleticsPlayground athleticsPlayground = new AthleticsPlayground("Athletics playground",
-            "Baker st, 88", 2003, SportSeason.SUMMER, 800, SportKind.ATHLETICS,
+            "Baker st 88", 2003, SportSeason.SUMMER, 800, SportKind.ATHLETICS,
             3000, 10);
-    private ChessHall chessHall = new ChessHall("Chess Hall", "Silent st, 204", 1990,
+    private ChessHall chessHall = new ChessHall("Chess Hall", "Silent st 204", 1990,
             SportSeason.ALL_SEASONS, 90, SportKind.CHESS, 10);
-    private FootballField footballField = new FootballField("Football field", "Liberty st, 39",
+    private FootballField footballField = new FootballField("Football field", "Liberty st 39",
             1968, SportSeason.SUMMER, 1100, SportKind.FOOTBALL, 30, 70);
     private ShootingPlayground shootingPlayground = new ShootingPlayground("Winter Archery",
-            "Silver st, 42", 1999, SportSeason.WINTER, 500, SportKind.ARCHERY,
+            "Silver st 42", 1999, SportSeason.WINTER, 500, SportKind.ARCHERY,
             30, 15, 250);
 
     // variables for tests
