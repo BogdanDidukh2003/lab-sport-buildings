@@ -5,7 +5,8 @@ public class AquaticsHall extends SportBuilding {
     private int poolsNumber;
     private double averagePoolVolume;
 
-    public AquaticsHall() {}
+    public AquaticsHall() {
+    }
 
     public AquaticsHall(int poolsNumber, double averagePoolVolume) {
         this.poolsNumber = poolsNumber;
@@ -17,6 +18,18 @@ public class AquaticsHall extends SportBuilding {
         super(name, location, constructionYear, sportSeason, viewersNumber, sportKind);
         this.poolsNumber = poolsNumber;
         this.averagePoolVolume = averagePoolVolume;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + ","
+                + "poolsNumber" + ","
+                + "averagePoolVolume";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ","
+                + this.poolsNumber + ","
+                + this.averagePoolVolume;
     }
 
     public int getPoolsNumber() {

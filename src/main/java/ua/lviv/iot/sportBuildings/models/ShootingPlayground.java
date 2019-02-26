@@ -6,7 +6,8 @@ public class ShootingPlayground extends SportBuilding {
     private int targetsNumber;
     private int arrowsNumber;
 
-    public ShootingPlayground() {}
+    public ShootingPlayground() {
+    }
 
     public ShootingPlayground(int bowsNumber, int targetsNumber, int arrowsNumber) {
         this.bowsNumber = bowsNumber;
@@ -21,6 +22,20 @@ public class ShootingPlayground extends SportBuilding {
         this.bowsNumber = bowsNumber;
         this.targetsNumber = targetsNumber;
         this.arrowsNumber = arrowsNumber;
+    }
+
+    public String getHeaders() {
+        return super.getHeaders() + ","
+                + "bowsNumber" + ","
+                + "targetsNumber" + ","
+                + "arrowsNumber";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ","
+                + this.bowsNumber + ","
+                + this.targetsNumber + ","
+                + this.arrowsNumber;
     }
 
     public int getBowsNumber() {

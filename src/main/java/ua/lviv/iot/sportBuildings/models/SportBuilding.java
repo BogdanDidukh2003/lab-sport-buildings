@@ -9,7 +9,8 @@ public abstract class SportBuilding {
     private int viewersNumber;
     private SportKind sportKind;
 
-    public SportBuilding() {}
+    public SportBuilding() {
+    }
 
     public SportBuilding(String name, String location, int constructionYear,
                          SportSeason sportSeason, int viewersNumber, SportKind sportKind) {
@@ -21,16 +22,33 @@ public abstract class SportBuilding {
         this.sportKind = sportKind;
     }
 
+    public String getHeaders() {
+        return "name" + ","
+                + "location" + ","
+                + "constructionYear" + ","
+                + "sportSeason" + ","
+                + "viewersNumber" + ","
+                + "sportKind";
+    }
+
+    public String toCSV() {
+        return this.name + ","
+                + this.location + ","
+                + this.constructionYear + ","
+                + this.sportSeason + ","
+                + this.viewersNumber + ","
+                + this.sportKind;
+    }
+
     @Override
     public String toString() {
-        return "SportBuilding{" +
-                "name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                ", constructionYear=" + constructionYear +
-                ", sportSeason=" + sportSeason +
-                ", viewersNumber=" + viewersNumber +
-                ", sportKind=" + sportKind +
-                '}';
+        return "SportBuilding{"
+                + "name='" + name + '\''
+                + ", location='" + location + '\''
+                + ", constructionYear=" + constructionYear
+                + ", sportSeason=" + sportSeason
+                + ", viewersNumber=" + viewersNumber
+                + ", sportKind=" + sportKind + '}';
     }
 
     public String getName() {

@@ -13,16 +13,22 @@ import ua.lviv.iot.sportBuildings.models.SportBuilding;
 import ua.lviv.iot.sportBuildings.models.SportKind;
 import ua.lviv.iot.sportBuildings.models.SportSeason;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-class SportBuildingsManagerTest {
+class SportBuildingWriterTest {
 
     private List<SportBuilding> sportBuildings = new ArrayList<>();
-    private SportBuildingsManager manager;
+    private SportBuildingWriter sportBuildingWriter;
+    private String filePath = "csvFile";
 
     // init all objects to improve performance
     private AquaticsHall aquaticsHall = new AquaticsHall("Aqua Hall", "Red st 117", 1994,
@@ -39,9 +45,6 @@ class SportBuildingsManagerTest {
             "Silver st 42", 1999, SportSeason.WINTER, 500, SportKind.ARCHERY,
             30, 15, 250);
 
-    // variables for tests
-    private int sportBuildingsSize;
-
     @BeforeEach
     void setUp() {
         sportBuildings.add(aquaticsHall);
@@ -50,8 +53,7 @@ class SportBuildingsManagerTest {
         sportBuildings.add(footballField);
         sportBuildings.add(shootingPlayground);
 
-        sportBuildingsSize = sportBuildings.size();
-        manager = new SportBuildingsManager(sportBuildings);
+        sportBuildingWriter = new SportBuildingWriter(filePath);
     }
 
     @AfterEach
@@ -60,41 +62,34 @@ class SportBuildingsManagerTest {
     }
 
     @Test
-    void testFindByViewersNumber() {
-        final int minViewersNumber = 100;
-        final int maxViewersNumber = 1000;
-        List<SportBuilding> selectedBuildings = manager.findByViewersNumber(minViewersNumber, maxViewersNumber);
-        for (SportBuilding selectedBuilding : selectedBuildings) {
-            assertTrue(selectedBuilding.getViewersNumber() > minViewersNumber
-                            && selectedBuilding.getViewersNumber() < maxViewersNumber,
-                    "findByViewersNumber() doesn't work properly");
+    void testWriteToFile() {
+        File csvFile = new File(filePath);
+        sportBuildingWriter.writeToFile(sportBuildings);
+
+        try (FileInputStream fis = new FileInputStream(csvFile);
+             InputStreamReader isr = new InputStreamReader(fis, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(isr)
+        ) {
+            for (SportBuilding sportBuilding : sportBuildings) {
+
+                assertEquals(sportBuilding.getHeaders(), reader.readLine(),
+                        "Headers weren't written");
+
+                assertEquals(sportBuilding.toCSV(), reader.readLine(),
+                        "toCSV() values weren't written");
+            }
+            assertNull(reader.readLine(), "Besides needed values, csv file has some mess!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Reading the file ended");
         }
     }
 
     @Test
-    void testSortBySportKind() {
-        manager.sortBySportKind(sportBuildings);
-        for (int i = 1; i < sportBuildingsSize; i++) {
-            assertTrue(sportBuildings.get(i).getSportKind().ordinal() >=
-                            sportBuildings.get(i - 1).getSportKind().ordinal(),
-                    "sortBySportKind() doesn't work properly");
-        }
-    }
-
-    @Test
-    void testSortBySportSeason() {
-        manager.sortBySportSeason(sportBuildings);
-        for (int i = 1; i < sportBuildingsSize; i++) {
-            assertTrue(sportBuildings.get(i).getSportSeason().ordinal() >=
-                            sportBuildings.get(i - 1).getSportSeason().ordinal(),
-                    "sortBySportSeason() doesn't work properly");
-        }
-    }
-
-    @Test
-    void testSetterAndGetterOfSportBuildingsManager() {
-        manager.setSportBuildings(sportBuildings);
-        assertEquals(sportBuildings, manager.getSportBuildings(),
-                "setter and getter don't work properly");
+    void testGetterAndSetterFilePath() {
+        sportBuildingWriter.setFilePath(filePath);
+        assertEquals(filePath, sportBuildingWriter.getFilePath(),
+                "SportBuildingWriter Getter/Setter test failed");
     }
 }
