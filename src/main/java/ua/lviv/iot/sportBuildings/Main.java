@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void oldMain() {
         System.out.println("\tSport Buildings\n");
 
         // calling manager to manipulate the data

@@ -1,5 +1,8 @@
 package ua.lviv.iot.sportBuildings.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class AthleticsPlayground extends SportBuilding {
 
     private int trackDistance;

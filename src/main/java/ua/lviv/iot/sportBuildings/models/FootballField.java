@@ -1,5 +1,8 @@
 package ua.lviv.iot.sportBuildings.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class FootballField extends SportBuilding {
 
     private double fieldWidth;
