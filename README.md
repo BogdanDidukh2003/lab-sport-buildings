@@ -1,5 +1,5 @@
 # lab-sport-buildings
-Lab 3: implementation of Sport Buildings
+Lab programming part 2(java): implementation of Sport Buildings
 
 ### How to work with maven-project?
 
