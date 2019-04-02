@@ -27,6 +27,7 @@ public class LabSportBuildingsApplication {
 
         return (args) -> {
             repository.save(aquaticsHall);
+            repository.findAll().forEach(obj -> System.out.println(obj));
         };
     }
 }
