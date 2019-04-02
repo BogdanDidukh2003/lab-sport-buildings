@@ -1,5 +1,8 @@
 package ua.lviv.iot.sportBuildings.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class ChessHall extends SportBuilding {
 
     private int tablesNumber;
