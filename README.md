@@ -18,3 +18,7 @@ To clean the target folder(otherwise, it's written in .gitignore):
 To generate site:
 
 <code>mvn site</code>
+
+To run spring-boot project:
+
+<code>mvn spring-boot:run</code>
